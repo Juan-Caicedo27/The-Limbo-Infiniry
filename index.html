@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MusicMood</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
@@ -79,18 +79,18 @@
 <body>
   <div class="container">
     <header>
-      <h1>Controla Tu Ansiedad </h1>
+      <h1>Controla Tu Ansiedad</h1>
     </header>
 
     <section class="moods">
-      <button onclick="showRecommendation('Naturaleza')">📚 Naturaleza </button>
-      <button onclick="showRecommendation('cine')">🧘 Cine</button>
+      <button onclick="showRecommendation('Naturaleza')">🌳 Naturaleza</button>
+      <button onclick="showRecommendation('cine')">🎬 Cine</button>
       <button onclick="showRecommendation('cocinar')">🍳 Cocinar</button>
       <button onclick="showRecommendation('ejercicio')">🏃 Ejercicio</button>
       <button onclick="showRecommendation('llorar')">😢 Llorar bonito</button>
     </section>
 
-    <section class="recommendation">
+    <section class="recommendation" id="recommendation">
       <img id="cover" src="" alt="Portada musical">
       <h2 id="title"></h2>
       <p id="artist"></p>
@@ -101,15 +101,15 @@
   <script>
     const moods = {
       Naturaleza: {
-        title: "Tu Bosque ",
+        title: "Tu Bosque",
         artist: "Chillhop Music",
-        url: "https://youtu.be/7Ilu033ydSw?si=t23w6hRhgYuZrC_k run devO4i9A",
+        url: "https://www.youtube.com/embed/7Ilu033ydSw",
         cover: "https://i.ytimg.com/vi/7Ilu033ydSw/maxresdefault.jpg"
       },
       cine: {
         title: "Nature & Relax Music",
         artist: "Peaceful Sounds",
-        url: "https://youtu.be/wzjYrGSwFrI?si=e9b2MfJ47AiiUu68",
+        url: "https://www.youtube.com/embed/wzjYrGSwFrI",
         cover: "https://m.media-amazon.com/images/M/MV5BZWM0OWVkNTMtNjNkMS00M2FjLThiOTgtZGYyYTM3OTkwZTAzXkEyXkFqcGc@._V1_.jpg"
       },
       cocinar: {
@@ -121,24 +121,26 @@
       ejercicio: {
         title: "Workout Music Mix",
         artist: "Gym Motivation",
-        url: "https://www.youtube.com/live/Mg71qKLF9Fk?si=Z3iqbpyuD9t-1fg1",
+        url: "https://www.youtube.com/embed/Mg71qKLF9Fk",
         cover: "https://i.ytimg.com/vi/613eVDWmL6w/maxresdefault.jpg"
       },
       llorar: {
         title: "Sad Piano Playlist",
         artist: "Emotional Piano",
-        url: "https://youtu.be/zMvCfm_AjYo?si=w06m6vgv3UQhH-Bi",
-        cover: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxATEhUQEhIVERUXEBUPFRUWFRcVDxUVFRUWFhYVFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGyslHR0tLS0tLS0tLSstLSsrLS0tLS0tLS0tLi0tLSstLS0tLS0tLS0tLS0tKy0tLS0rLS0tLf/AABEIAKgBKwMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAAAQIDBAUGBwj/xABDEAABAwICBgYGBwcDBQAAAAABAAIDBBEFIQYSEzFBUSJhcYGRoQcUMkKxwUNScoKSk9EVFyMzU2Lwg7LhFiQ0osL/xAAYAQADAQEAAAAAAAAAAAAAAAAAAQIDBP/EACwRAAICAQMEAgECBwEAAAAAAAABAhEDEiExE0FRYQQi8IGhMkJScZGx8SP/2gAMAwEAAhEDEQA/APDUIQgAQhCABCEIAEIQgAQhCABCEIAEIQgAQhCABCEIAEIQgAQhCABCEIAEIQgAQhCABCEIAEIQgAQhCABCEIAEIQgCTYlGxKsIQOivsSjYlWEWQFFfYlLsHK4yNDigRS2LkbBytXS3QBVFO5OFK/l5q01ykEidITbKQon8vNO9Qk5DxV4TJwnVUiHKRn+oSch4o9Qk5DxWjt05jroqItUjM9RfyHikNE/l5rZ2Tkhp3ckaUHUMb1N/LzS+ov5DxWsYiOCaClSHqZmeov5DxThh0nIeK0w4KVsgVJRJc5GR+zJeQ8UfsyXkPFbrHgqSy0WKLMnnkjnThsnIeKaaCTkPFdA4KF4UvGkVHM2Yfqb+Q8Uepv5ea1XBIAo0mutmZ6k/kPFL6i/kPFazWp4amoEvI0YvqL+Xmj1J/LzW5qJDGn0xdYwjSP5eaT1Zy2nxKB8alwouOSzL2Dkmxcr7mphCmi0ynsijYlWSEiRRX2JRsSrCEBQIQhAwUsbOJToYuJSyv4BImwfJwCjIStanFVQiEhIrDWXSyUxCQakVroun7NKIygq0MQpREpGwIolyRACrtBmQE1tMtHBoWiVt8s1cYuzLJkVHRUeHXaCRZW/2axdzgujwlZY5C1loR6ARcXuKtzijKMJPc8uqMMbbcubxOh1dy99ZoHT8S496c70f0J9qPW7SoeSBooTPmdzyEbVfRuIejHDntLREGnmMj4rxPTfQ6aglsQXROPQktl9l3I/FRafBpb7oyaN11pBqyqHetcbl04uDkz/xEb2qs9WnlVpCqkTAgckCc5MWTOhEzU8BQsKnariZy2HtCeGpGqVoWiMGyB7FBIxX3hV3tSkioSKD2KBzVfe1V5GrCUTqjMqEJhU7mqIhZs3TGISlIkMFZpoRrWfcdG4+SjEfR1r+8G2twIJvfu3dallfuJ32De4JCbEe/KyY0JApGNVJEvYUNTXhWGtUMjVTRKe4+hYXOAWnWxhouptF6HWLnncMlHpC/pag7VJjKWrJSMlOaEjQnhM1Y5qkCjCUFUQ0S6yNooikKeonSe0+iTSVsjTTSHpt3X4hepNXyhhVe+CVs0Zs5rge3qX0votjLKqBkrSDcC/UeIWOWN/Y2xSr6s2bJQEIWBuBCzcaweGpjdFKwPa4WIK07pE7rgGk1ufNmmGhMtBLcXfC49F/L+136rLaMl9N4nh0U0bo5WhzSLEHcuDwrCcEgc5jw2Z2sc5OnYXyAG5dUM8Yx3OSfxpzlseNShVnr6Efo7gkw/kRi/FoLD4tso/3b4Od0ZH+o75lN54sF8acT56eorr3av8AQ9RPzinlj6ui8fAHzXKVnobrhJaOSFzODiXB3e23zS1plKEl2POGKdq9Fj9DVZxqIh91xWhTehp/v1Q+6z9SqU4ruS4SfY8xYpmhexR+j/D6bVEgMpdxeeXUFoQ6O4WPoG/FWsq5SMXhfDaPD3NUDgvfpMDwoixgb4FLRYFhTDdsLAebm3Pmh5vTGsHtHhVNgs0g1gx1ueqbKw3Rsu3PseR3r6KY6mtZuoByyCycR0fo5bnVYCeItfxUdZd4mj+PL+WR4DVaLSt61k1GFSN3hd5jsNRBM6JodJHva4Z26rrFrNqfcPgt9EJK0c3WywlTOSdRv5JnqzuS6Fwk4tsoD3LN4kbL5MvBisdYfLgTwPx8U290hQFznYSNCt09M9wOq29lWiF8l6bophjGMAdmXC5uqulZlN70jzxo5qKRq7bSzRwNO0iGW8hclTU5dI1nNwCq7Vmeqr9HX4LAIqXXI3guXFVUxe8uPNdvppIyKnbE02JsMjy33XABZonDHdyJLoumhOVGwusl1k1OFv8ACgBbpCl1gjahAhF2foy0p9TqNWQnZSWa7fZp4OsuMM6USnknsJpn11BKHAOGYIuFKvOPRLpi2ohFJK7+OwWaDfpsG433XHFeiveALkgBc8o0zohLUhyCufxLS+khJBeCRwC5nEvSQLWhZfrKk0UWzrcbjllaYxJsIzk54/muHJvBvasijwjCoMyGO5l79Y+G7yXAVOJV9c+zdo7+1gNh22Wzhvo9q3ZyvbEP7nazvBuXmpfpGsYpLd0dozGsPZkzU+63JWafGIn+zE5w6mXHksOHA6KkbrSObK8cXmze5g+d01+ndNHkLvHAMGqAOSab7ktJ8HV08rHbonN+6WqfXAG53gVxT/SEw5MjPaSkj08dfNgtu/5TtEuLOvkxFg3h3e0hDMQa72SsCLTunNw8Fp8Qoxp7Rh1nfit8UxUVtOcTbG+HaXDdawI33OSpuqdX2SXA5g2+K5r0r6Uw1ETI4Hh1n6xyzy61S0Sx90kWo8l1sj9Ycu0Lswu1RwfJ+stXZnYvrScgeKa6oyvnuWNUVwby87WUX7XAvfcRYdXYttDOTrI1nV5bnc/HyVWTFsz0rccuSyH4tHzuDlxPksfE8SAuQbdXGytQXcz6snwdNWVmt71j1fNYVa9/A/ouRqMakvvQ3H3GwPJJZILYt/HyS3LOJPdxWE+cXK0Z8S1hYrJfa6xyyvg6sEGluiIhASICwOwv4RUMZK1z26wBzC9SoJGlrZGkOa7c4cOoryJpWzgWMPhNr9Bxzbw7uSKsxmu53ekuK7OJzDYk5BcvoTCH1Ws7c1pd3qtpLiLZngtFgG5da2NG6RseH1FWXWfYhovbdkPNOf1VGL4s5/TGu2lU+25vQH6rEBKbc7zmnAHkFKOmMdKoXNKAUWPMBFv7/BMBwYUpj/y6aGDm49gTxAPqvPknQmw1RzCQlvMKUQt+p4vAR0R7sY7XEp0KyDaN5rSwTC5Kl+qwENv05CDsmDm4/JSYJWUjZNapbrxgX1I25uPAOJ4LoNI9NmTw+r08ToY92q1gGXXZS77FRSfJu4fimH4V/wCP/wBxUFpa6U2Nr8G8h2LMr9P62cFpdqg2GS46gw6aaQMY0tufakIYwdbnFdxQaN0VOA6SoZW1FwGQMIEBcTucT7XkOpZSgzeM4ojwHAKqr6TRZt85XnVj/Ed/cuxpNGcPpunU1AncPcb0Wd+dz4hcxpZjWItkFNNGaQBgc2Npbq6pyBBaSCMiMuSxYWE7ySs6o21XwekyadRsbs6WEMaN1gAPABYtbpBVS73lo6isem1QFKKhoTsagMfG956Ti7tKkbh7Qlp5XvNo2OeeTGl3wVmow2uaA40s2rz1LnwGancpKKImwAJHkKSjoayV2oynlJ62FoHa51gO8rpcO9H8zrGolbEPqt6b/HcD4oUWDlFHFTkKGPR+sqP5MEjwfe1SGfjNh5r1+i0Wo6cazGCSQZh0p1jfqGTR3BPONNblK/Z8MiMlS2MpSvg8tg9E+IyZvdDEOReS7/1BHmsPG8CmwyeNr7ta7PWDw5ji3eRkLZcCL9a9VxfS1sL7NeH8Obe1eX+k3HvWtQ52a64v1jMLbHJp2c2XGpJplKuxgPFgS055Hj1m27iseXFDuvbPgcsupZDpiVGXLolmbOWHxYo0jiLud/8AN5SyVxPxWXdAKjqM16MR8zlDdOJTVDNkhweguTEJWOh90iQoCYiUjM9vDclBTNZSAX3ZWbfM77b7fGyZLJoWuc4NbmSQ0DrJsF2PpCjfTRU1ByjExLMrk3FnDzWNoNStfVB72udHE0zv1d4DdxPf8FS0qqdtVzytLtV0hLddwLgAALb+pQ3bM6TnXgzNU8j4pdX7PeUzZ/3Dxv8ABKGM4v8AAEqjUmbb6zB3En4J7ZG7jKR9ln62VcCPiXHsAHxKeHRcGvd2kD4BMloeZY/rSnwHzSCaL6jndr/0Ckjbf2aZx/McPIK7FR1JF20bAObm7u97kydl/wBM41UY+hZ95zj805ldfJsUXcwOPnda8cNYBe9NBbmYWn5p4M9uliMDRbcyS5z5BrAigtfjMxr6s+zG8fZht8GqT1KvO9so7Tq/EhTObFntMRkd1MjlcPNwCrvioN5fUydjWN/3XQH6fsNdhs3vyRt+3M35EprcPj96ohH2dd/wap9tQAZU80h5vlDf9gSsxOBvs0UX33vk+Nkth7m1RxmaE6uIMqHQMJZBIJG1GpveIS/2wAC7UBvkbDnawKjmqTaOzW7i9xswfqsfD9JWxuBdQUMjeLNkWHtDw64PXmu90DoH1Os+lawQA7nP/isJ9x7eJG6435GwuFE13Rrilp2YyHAYo3ETVDnWO6NobfvN1sU02GRbqYSHnI4v8jl5LoZNFHvFpHNHZa/iVTqtC2i2pIzr1nfopqL5KcpISPTZrRqxxNYOQFh5KeHTB5a6R/RjbkTbNx4Nb1/BVW6KNaC4yx2GZtmuZx4OLg0H+G3JoG4X3nrPWlNRS2KxqUnudE3TSokd0AGtWhJpFKRusbZ8j19X/C5qhawNFrXspp6sNFysrN3FF2qxKYj2iuVxeR7jcuJWpJWOcLMBPkPErlccrpWvMQjL3DI6oJAPLIK4py4MJSjHkimn5nqWDpBUAgN67qvVV7xlx4rNkkJNytUqMm9Q0pEITACkQkKBgkKVIgAQhCQxUBIhMQ4FSB283z77nn/nWolNTRlzg3IXcG3Jta5tcnl+iYmddTwmlwt1QS8etvNMGtsLx6snScSDkdV2Q5jNcaNXr+C6XTCog/h08c8koiY1u8GAWBFmNHHdnyyXNdHrUxIhxfkcHN+pftJy8E7aj6je+5+aaHt+qT3qRjzwjB8SqGwFU4bg0dYaL+akbXTZAPcLG41bCxyzFh1DwTmbXhG0fdHzU7W1P12t72j4KkmQ2vRCXVL89aV3e5ObhNQ76Nx7T+pVnYSkdKra0ctc/AJoo4ffrPAOd809JOv+3+GKNGpxmRGwczIwDyKeMBA9uqpmf6hcfABNFNhw9qeV/YwD4qcS4S3dHUSHrcGhFL8YapfiIzhdIParmH7Eb3eaQw4cN9RM/wCzEAPNW2YjQj2MOc/7TnH4K1FibvosLjHWWFx8wnSFb9/sjJ22Hbmx1Ena5o+Cngli+jw+R/2nSH4BbEeJYof5dLFH/ptCnD8bd9IyK/LVHlZOvyhavP8AsrUTa2/8HCIgebo7/wC4heiaDVOIg7KbDIoy7LbxajXNz+kjubt7D3FcP+ysTd7eIhl+T/0sruFYbJBIJf20+N45PuOwteSCO0JNNocZJHtbaS9xtcxkQ0NyPJMfhLDvkk7i0fJMwCFuz25kbM+QAulbk1wAy6IJbl1WWpdcklTOpMzZsFgc0MdrEDhrEX6zbeVD/wBMUXGG/a6Q/wD0tdCRVsz48CpG7oGd4v8AFTMwynG6CMfcb+itd6O9AWMbAwbmNHYAPkpAUmXNJl/l0CPO/SP6NWVmtVU2rFUWJc3dHPbdrH3X/wB248eY8HrKCWJ7o5GFj2OLXNcLOaRwIX12QOXkuS040Ip69usAIZw2zJQ0Z23NkA9pvmOHI6wl2ZEk+x8zkJFvY9gs1LKYaiPUcMxxY4fWY73gsaSMcFo1RMZWQoQQkUlghCEhghCEACEITAFt6K0zHSl8gu1jSbXsCSMvmsRW26oiPS6RO5JmeTdV5GVs+u9zg0NFyAAMrDcogTyTbo1imUlSombr8Mk8Nk+tbvVa5QE7E0WtjzkHiU5lPF70ngFVEZPBSerOT/Qlr2XNnSD3nuUrJ6IfRvd2lUmUbuYVmPC773gKlfZGb095MuMxalbupWntKkbpMG+zTRDuUDMJh4yhSNoaQb5L96r7eiP/AD9slOmNRua2NvY1QSaV1h+kt2ABTM9QbvzUxxCgbujv3I3/AKhfXtAyX4zVO3yv7ionTTu3ukPeVt/9RU7fZh8gmP0oPuwgJUvJacu0DJZQTv8AdefFXKfRiqfujt2qwNI6k+zGPBSx4ziLvZFvup1H2Jyn6R0Wh2jOIxSta11o3uAkjD7BwO8gbg7rXulJGyJrIQXZNs3WJJIH9x3r5+wuvxpr2vY8NIII1rFveF7FopjNXMwuqIow4WF2E2J6gVGSFo0xTV7vc6hIo4pCRcgt6jvCcSuajoHXRdMukLkUA/WSF6iL0x0iKAmL1G56ryT9apzVfWqSJbK+k+CU9ZEYZ23F7tcMntdza7eF8+6X6Lz0Mln9OMmzJBuPU4D2XeR4L3morOtYuLbKVhjkAc0ixBFwtEiHI+fiUi6HSnRz1d2tGS6M555ub1dYXPJtUUpJ8AhCEhghCEDK+1KNqVGhBJJtSnGoda2XgoUIAk2pRtSo0IAk2zkvrDlEhAE4qn80GrfzUCEBRN60/mj1h3NQoQFEu3dzSbYqNCAJROerwUjaxw4N8FWQgC63E3jcGfhCmbjcw3an4AsxCepk6V4NZukNQNxb+EKRulFUNzm/gCxUJ635F04eDoG6Y1o3PaPuBaeH+k/FIRqslZa9842n5LjEJNtjUIrhHoH74sY/qxfks/RJ++DGP6sf5LP0XAIU0ijvv3v4x/Vj/JYk/e9i/wDUj/JYuCQigO8Ppcxf+rH+UxMPpYxb+rH+UxcMhOgO1d6UsVP0jPymqJ3pKxM/SM/LauPQgKOrf6QsRO97Py2qJ2nVcd72/gauZQixUjdn0sq3iznNI+wFjyTkm+Q7BYeCiQnYJJcEm1KNqVGhIZJtSjalRoQAIQhAAhCEACEIQAIQhAAhCEACEIQAIQhAAhCEACEIQAIQhAAhCEACEIQAIQhAAhCEACEIQAIQhAAhCEACEIQAIQhAH//Z"
+        url: "https://www.youtube.com/embed/zMvCfm_AjYo",
+        cover: "https://i.ytimg.com/vi/zMvCfm_AjYo/maxresdefault.jpg"
       }
     };
 
     function showRecommendation(mood) {
       const data = moods[mood];
+      if (!data) return;
+
+      document.getElementById("cover").src = data.cover;
       document.getElementById("title").textContent = data.title;
       document.getElementById("artist").textContent = data.artist;
-      document.getElementById("cover").src = data.cover;
       document.getElementById("player").src = data.url;
-      document.querySelector(".recommendation").style.display = "flex";
+      document.getElementById("recommendation").style.display = "flex";
     }
   </script>
 </body>
